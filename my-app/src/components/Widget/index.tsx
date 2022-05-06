@@ -3,8 +3,11 @@ import { TouchableOpacity } from 'react-native';
 import { ChatTeardropDots } from 'phosphor-react-native';
 import { styles } from './styles';
 import { theme } from '../../theme';
-import BottomSheet from '@gorhom/bottom-sheet/lib/typescript/components/bottomSheet';
+import BottomSheet from '@gorhom/bottom-sheet';
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
+import { Options } from '../Options';
+
+
 
 function Widget() {
 
@@ -17,18 +20,19 @@ function Widget() {
   return (
     <>
       <TouchableOpacity>
+        style={styles.button}
+        onPress={handleOpen}
         <ChatTeardropDots
-          style={styles.button}
-          size={50}
+          size={24}
           color={theme.colors.text_on_brand_color}
         />
         <BottomSheet
           ref={bottomSheetRef}
-          snapPoints={[1, 280]}
-          backgroundStyle={styles.modal}
-          handleIndicatorStyle={styles.indicator}
-          
-        />
+          snapPoints={[0, 300]}
+        >
+          <Options  />
+
+        </BottomSheet>
       </TouchableOpacity>
     </>
   );
