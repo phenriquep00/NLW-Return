@@ -6,6 +6,12 @@ import { theme } from '../../theme';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
 import { Options } from '../Options';
+import { feedbackTypes } from '../../utils/feedbackTypes';
+import { Form } from '../Form';
+import { Sucess } from '../Sucess';
+
+export type FeedbackType = keyof typeof feedbackTypes
+
 
 
 
