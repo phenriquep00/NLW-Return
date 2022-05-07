@@ -53,7 +53,7 @@ function Widget() {
           {
             feedbackSent
               ?
-              <Sucess />
+              <Sucess onSendAnotherFeedback={handleRestartFeedbacl}/>
               :
               <>
                 {
